@@ -284,7 +284,8 @@ def GetIncrementAndComparability(record_list: List[Optional[trh.TRRecord]],
     """
     chrom_order = [np.inf if r is None else chroms.index(r.chrom) for r in record_list]
     pos = [np.inf if r is None else r.pos for r in record_list]
-    min_pos = min(pos)
+    curr_pos=[pos[i] for i in range(len(chrom_order)) if chrom_order[i]==min_chrom_index]
+    min_pos = min(curr_pos)
     min_chrom_index = min(chrom_order)
 
     increment = \
