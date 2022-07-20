@@ -287,7 +287,10 @@ def GetIncrementAndComparability(record_list: List[Optional[trh.TRRecord]],
     min_chrom_index = min(chrom_order)
     curr_pos=[pos[i] for i in range(len(chrom_order)) if chrom_order[i]==min_chrom_index]
     min_pos = min(curr_pos)
+<<<<<<< HEAD
 
+=======
+>>>>>>> 1a62c8b82fe2413348231a811887810079ec4b42
     increment = \
         [chrom_order[i] == min_chrom_index and pos[i] == min_pos and record_list[i] is not None
          for i in range(len(chrom_order))]
